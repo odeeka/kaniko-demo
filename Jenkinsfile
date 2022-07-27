@@ -45,7 +45,10 @@ pipeline {
   stages {
     stage('Docker BnP') {
       steps {
-        git 'https://github.com/jenkinsci/docker-inbound-agent.git'
+        //git 'https://github.com/jenkinsci/docker-inbound-agent.git'
+        git 'https://github.com/odeeka/kaniko-demo.git'
+        pwd
+        ls -al
         sh '/kaniko/executor -f `pwd`/Dockerfile -c `pwd` --insecure --skip-tls-verify --cache=true --destination=docker.io/ptibor84/dsodemo'
       }
     }
