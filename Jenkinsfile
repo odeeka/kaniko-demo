@@ -47,8 +47,9 @@ pipeline {
       steps {
         //git 'https://github.com/jenkinsci/docker-inbound-agent.git'
         git 'https://github.com/odeeka/kaniko-demo.git'
-        pwd
-        ls -al
+        sh 'pwd'
+        sh 'ls -al'
+        sh 'cd kaniko-demo'
         sh '/kaniko/executor -f `pwd`/Dockerfile -c `pwd` --insecure --skip-tls-verify --cache=true --destination=docker.io/ptibor84/dsodemo'
       }
     }
