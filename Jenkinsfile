@@ -49,7 +49,7 @@ pipeline {
         git 'https://github.com/odeeka/kaniko-demo.git'
         sh 'pwd'
         sh 'ls -al'
-        sh '/kaniko/executor --dockerfile `pwd`/Dockerfile -c `pwd` --insecure --skip-tls-verify --cache=true --destination=docker.io/ptibor84/dsodemo'
+        sh '/kaniko/executor --dockerfile `pwd`/Dockerfile -c `pwd` --insecure --skip-tls-verify --cache=true --destination=docker.io/ptibor84/dsodemo --force'
       }
     }
   }
